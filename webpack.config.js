@@ -34,9 +34,10 @@ module.exports = {
     }),
   ],
   devServer: {
+    host: 'localhost',
+    port: 8080,
+    hot: true,
     static: {
-      host: 'localhost',
-      port: 8080,
       directory: path.join(__dirname, './build'),
     },
     proxy: {

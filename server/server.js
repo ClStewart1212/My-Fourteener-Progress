@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
 // serve index.html on the route '/'
 //TODO:handle generic request to serve HTML file
 app.get('/', (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
+  res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
 
 //TODO:catch-all route for unknown requests
