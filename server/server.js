@@ -10,7 +10,8 @@ const PORT = 3000;
 
 //TODO:require routers
 
-const exampleRouter = require('./routes/exampleRouter.js');
+const mountainRouter = require('./routes/mountainRouter.js');
+const userRouter = require('./routes/userRouter.js');
 
 //convert incoming requests to JSON
 app.use(express.json());
@@ -20,7 +21,9 @@ app.use(cookieParser());
 //TODO: handle requests for static files
 
 //TODO:handle specific route requests
-app.use('/api', exampleRouter);
+app.get('/basicInfo', userRouter.basicInfo, (req, res) => {});
+
+app.use('/:name', mountainRouter);
 
 if (process.env.NODE_ENV === 'production') {
   // statically serve everything in the build folder on the route '/build'
