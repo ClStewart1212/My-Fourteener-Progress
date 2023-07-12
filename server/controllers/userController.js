@@ -4,17 +4,9 @@ const userController = {};
 
 //middleware to get basic user info
 userController.getUserInfo = async (req, res, next) => {
-  //getting all basic user info
-  const peak = req.query.name;
-  if (!peak)
-    return next({
-      log: `userController.getUserInfo ERROR: fourteener peak name missing`,
-      message: {
-        err: 'userController.getUserInfo: ERROR: fourteener peak name missing',
-      },
-    });
+  //getting all basic user info for each mountain
   try {
-    const userInfo = await Users.find({ peak });
+    const userInfo = await Users.find();
     res.locals.userInfo = userInfo;
     return next();
   } catch {
@@ -84,5 +76,7 @@ userController.patchUserNotes = async (req, res, next) => {
     });
   }
 };
+
+//TODO: Add patch request to add photo url and photo to database
 
 module.exports = userController;
