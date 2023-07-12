@@ -42,7 +42,8 @@ module.exports = {
     },
     proxy: {
       //TODO: change to route that you need
-      '/example/': 'http://localhost:3000',
+      '/mountain': 'http://localhost:3000',
+      '/user': 'http://localhost:3000',
     },
   },
 };

@@ -2,41 +2,43 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 
 //set express functionallity to 'app' and establish PORT
 const app = express();
 const PORT = 3000;
 
-//TODO:require routers
-
+//require routers
 const mountainRouter = require('./routes/mountainRouter.js');
 const userRouter = require('./routes/userRouter.js');
 
 //convert incoming requests to JSON
 app.use(express.json());
-app.use('*', express.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
+// app.use(cookieParser());
 
-//TODO: handle requests for static files
+//handle requests for static files
+app.use(express.static(path.resolve(__dirname, '../client')));
 
-//TODO:handle specific route requests
-app.get('/basicInfo', userRouter.basicInfo, (req, res) => {});
+//handle specific route requests
 
-app.use('/:name', mountainRouter);
+//request from front info after page is loaded
+//sends back basic mountain info for individual cards as object
+app.use('/mountain', mountainRouter);
+app.use('/user', userRouter);
+
+// app.use('/:name', mountainRouter);
 
 if (process.env.NODE_ENV === 'production') {
   // statically serve everything in the build folder on the route '/build'
-  app.use('/build', express.static(path.join(__dirname, '../../dist')));
+  app.use('/dist', express.static(path.join(__dirname, '../../dist')));
 }
 
 // serve index.html on the route '/'
-//TODO:handle generic request to serve HTML file
 app.get('/', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
 
-//TODO:catch-all route for unknown requests
 app.use((req, res) => {
   res.sendStatus(404);
 });
@@ -50,7 +52,6 @@ app.use((err, req, res, next) => {
   };
   const errorObj = Object.assign(defaultErr, err);
   console.log(errorObj.log);
-
   return res.status(errorObj.status).json(errorObj.message);
 });
 

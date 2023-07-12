@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-//TODO: create mongoDB database and add URI here
-const MONGO_URI = 'URI';
+const MONGO_URI =
+  'mongodb+srv://Clstewart1212:Hermitage7142%21@fourteeners.vcwhax4.mongodb.net/';
 
 mongoose
   .connect(MONGO_URI, {
@@ -16,18 +16,19 @@ mongoose
 
 const Schema = mongoose.Schema;
 
-const mountainInfoSchema = new Schema({
+const mountainSchema = new Schema({
   range: String,
   peak: String,
-  difficulty: String,
+  class: Number,
   distance: Number,
-  elevation_gain: String,
-  roadType: String,
+  elevation_gain: Number,
+  road: Number,
+  link: String,
 });
 
-const MountainInfo = mongoose.model('mountainInfo', mountainInfoSchema);
+const Mountains = mongoose.model('mountains', mountainSchema);
 
-const userInfoSchema = new Schema({
+const userSchema = new Schema({
   peak: String,
   notes: String,
   photos: String,
@@ -37,9 +38,15 @@ const userInfoSchema = new Schema({
   completionDate: Date,
 });
 
-const UserInfo = mongoose.model('userInfo', userInfoSchema);
+const Users = mongoose.model('users', userSchema);
 
 module.exports = {
-  MountainInfo,
-  UserInfo,
+  Mountains,
+  Users,
 };
+//link for possiblly importing json onto mongoDB
+
+// mongoimport --uri mongodb+srv://Clstewart1212:Hermitage7142%21@fourteeners.vcwhax4.mongodb.net/fourteeners --collection mountains --type json --file mountains.json
+
+//keep getting this error so I'm giving up for now
+// error inserting documents: Unsupported OP_QUERY command: insert. The client driver may require an upgrade. For more details see https://dochub.mongodb.org/core/legacy-opcode-removal

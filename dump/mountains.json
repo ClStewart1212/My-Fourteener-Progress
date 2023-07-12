@@ -1,0 +1,526 @@
+{
+  "mountains": [
+    {
+      "range": "Sangres",
+      "peak": "Blanca Peak",
+      "class": 2,
+      "distance": 17,
+      "elevation_gain": 6500,
+      "road": 6,
+      "link": "https://www.14ers.com/route.php?route=blan1"
+    },
+    {
+      "range": "Elk",
+      "peak": "Capitol Peak",
+      "class": 4,
+      "distance": 17,
+      "elevation_gain": 5300,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=capi1"
+    },
+    {
+      "range": "Elk",
+      "peak": "Castle Peak",
+      "class": 2,
+      "distance": 13.5,
+      "elevation_gain": 4600,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=cast1"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Challenger Point",
+      "class": 2,
+      "distance": 13.5,
+      "elevation_gain": 5400,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=chal1"
+    },
+    {
+      "range": "Elk",
+      "peak": "Conundrum Peak",
+      "class": 2,
+      "distance": 13.5,
+      "elevation_gain": 4400,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=conu1"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Crestone Needle",
+      "class": 4,
+      "distance": 12,
+      "elevation_gain": 4400,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=cnee1"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Crestone Peak",
+      "class": 3,
+      "distance": 14,
+      "elevation_gain": 5700,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=cpea2"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Culebra Peak",
+      "class": 2,
+      "distance": 5,
+      "elevation_gain": 2700,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=cule1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "El Diente Peak",
+      "class": 3,
+      "distance": 15,
+      "elevation_gain": 5000,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=eldi3"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Ellingwood Point",
+      "class": 2,
+      "distance": 17,
+      "elevation_gain": 6200,
+      "road": 6,
+      "link": "https://www.14ers.com/route.php?route=elli2"
+    },
+    {
+      "range": "Front",
+      "peak": "Grays Peak",
+      "class": 1,
+      "distance": 7.5,
+      "elevation_gain": 3000,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=gray1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Handies Peak",
+      "class": 1,
+      "distance": 5.75,
+      "elevation_gain": 2500,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=hand1"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Humboldt Peak",
+      "class": 2,
+      "distance": 11,
+      "elevation_gain": 4200,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=humb1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Huron Peak",
+      "class": 2,
+      "distance": 7,
+      "elevation_gain": 3500,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=huro1"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Kit Carson Peak",
+      "class": 3,
+      "distance": 15,
+      "elevation_gain": 6250,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=kitc2"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "La Plata Peak",
+      "class": 2,
+      "distance": 9.25,
+      "elevation_gain": 4500,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=lapl1"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Little Bear Peak",
+      "class": 4,
+      "distance": 14,
+      "elevation_gain": 6200,
+      "road": 6,
+      "link": "https://www.14ers.com/route.php?route=litt6"
+    },
+    {
+      "range": "Front",
+      "peak": "Longs Peak",
+      "class": 3,
+      "distance": 14.5,
+      "elevation_gain": 5100,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=long1"
+    },
+    {
+      "range": "Elk",
+      "peak": "Maroon Peak",
+      "class": 3,
+      "distance": 12,
+      "elevation_gain": 4800,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=maro1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Missouri Mountain",
+      "class": 2,
+      "distance": 10.5,
+      "elevation_gain": 4500,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=miss1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Antero",
+      "class": 2,
+      "distance": 15.5,
+      "elevation_gain": 5200,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=ante1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Belford",
+      "class": 2,
+      "distance": 8,
+      "elevation_gain": 4500,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=belf1"
+    },
+    {
+      "range": "Front",
+      "peak": "Mt. Bierstadt",
+      "class": 2,
+      "distance": 7.25,
+      "elevation_gain": 2850,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=bier1"
+    },
+    {
+      "range": "Mosquito",
+      "peak": "Mt. Bross",
+      "class": 2,
+      "distance": 7.5,
+      "elevation_gain": 3700,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=bros6"
+    },
+    {
+      "range": "Mosquito",
+      "peak": "Mt. Cameron",
+      "class": 2,
+      "distance": 7.5,
+      "elevation_gain": 3700,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=bros6"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Columbia",
+      "class": 2,
+      "distance": 12,
+      "elevation_gain": 4250,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=colu2"
+    },
+    {
+      "range": "Mosquito",
+      "peak": "Mt. Democrat",
+      "class": 2,
+      "distance": 7.5,
+      "elevation_gain": 3700,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=bros6"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Elbert",
+      "class": 1,
+      "distance": 9.75,
+      "elevation_gain": 4500,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=elbe1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Mt. Eolus",
+      "class": 3,
+      "distance": 6,
+      "elevation_gain": 3100,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=eolu3"
+    },
+    {
+      "range": "Front",
+      "peak": "Mt. Evans",
+      "class": 2,
+      "distance": 5.5,
+      "elevation_gain": 2000,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=evan2"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Harvard",
+      "class": 2,
+      "distance": 14,
+      "elevation_gain": 4600,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=harv1"
+    },
+    {
+      "range": "Mosquito",
+      "peak": "Mt. Lincoln",
+      "class": 2,
+      "distance": 7.5,
+      "elevation_gain": 3700,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=bros6"
+    },
+    {
+      "range": "Sangres",
+      "peak": "Mt. Lindsey",
+      "class": 3,
+      "distance": 8.25,
+      "elevation_gain": 3500,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=lind1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Massive",
+      "class": 2,
+      "distance": 14.5,
+      "elevation_gain": 4500,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=mass1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. of the Holy Cross",
+      "class": 2,
+      "distance": 12,
+      "elevation_gain": 5600,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=holy1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Oxford",
+      "class": 2,
+      "distance": 11,
+      "elevation_gain": 5900,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=oxfo2"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Princeton",
+      "class": 2,
+      "distance": 6.5,
+      "elevation_gain": 3200,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=prin1"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Shavano",
+      "class": 2,
+      "distance": 9,
+      "elevation_gain": 4600,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=shav1"
+    },
+    {
+      "range": "Mosquito",
+      "peak": "Mt. Sherman",
+      "class": 2,
+      "distance": 5.25,
+      "elevation_gain": 2100,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=sher1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Mt. Sneffels",
+      "class": 3,
+      "distance": 6,
+      "elevation_gain": 2900,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=snef1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Mt. Wilson",
+      "class": 4,
+      "distance": 16,
+      "elevation_gain": 5100,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=mwil2"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Mt. Yale",
+      "class": 2,
+      "distance": 9.5,
+      "elevation_gain": 4300,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=yale1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "North Eolus",
+      "class": 3,
+      "distance": 0.2,
+      "elevation_gain": 250,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=neol4"
+    },
+    {
+      "range": "Elk",
+      "peak": "North Maroon Peak",
+      "class": 4,
+      "distance": 9.25,
+      "elevation_gain": 4500,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=nmar2"
+    },
+    {
+      "range": "Front",
+      "peak": "Pikes Peak",
+      "class": 1,
+      "distance": 24,
+      "elevation_gain": 7600,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=pikeeast"
+    },
+    {
+      "range": "Elk",
+      "peak": "Pyramid Peak",
+      "class": 4,
+      "distance": 8.25,
+      "elevation_gain": 4500,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=pyra1"
+    },
+    {
+      "range": "Tenmile",
+      "peak": "Quandary Peak",
+      "class": 1,
+      "distance": 6.75,
+      "elevation_gain": 3450,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=quan1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Redcloud Peak",
+      "class": 2,
+      "distance": 9,
+      "elevation_gain": 3700,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=redc1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "San Luis Peak",
+      "class": 1,
+      "distance": 13.5,
+      "elevation_gain": 3600,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=sanl1"
+    },
+    {
+      "range": "Elk",
+      "peak": "Snowmass Mountain",
+      "class": 3,
+      "distance": 22,
+      "elevation_gain": 5800,
+      "road": 1,
+      "link": "https://www.14ers.com/route.php?route=snow1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Sunlight Peak",
+      "class": 4,
+      "distance": 6,
+      "elevation_gain": 3000,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=sunl2"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Sunshine Peak",
+      "class": 2,
+      "distance": 12.25,
+      "elevation_gain": 4800,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=suns2"
+    },
+    {
+      "range": "Sawatch",
+      "peak": "Tabeguache Peak",
+      "class": 2,
+      "distance": 11,
+      "elevation_gain": 5600,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=tabe2"
+    },
+    {
+      "range": "Front",
+      "peak": "Torreys Peak",
+      "class": 1,
+      "distance": 7.75,
+      "elevation_gain": 3000,
+      "road": 2,
+      "link": "https://www.14ers.com/route.php?route=torr2"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Uncompahgre Peak",
+      "class": 2,
+      "distance": 7.5,
+      "elevation_gain": 3000,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=unco1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Wetterhorn Peak",
+      "class": 3,
+      "distance": 7,
+      "elevation_gain": 3300,
+      "road": 4,
+      "link": "https://www.14ers.com/route.php?route=wett1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Wilson Peak",
+      "class": 3,
+      "distance": 10,
+      "elevation_gain": 3900,
+      "road": 3,
+      "link": "https://www.14ers.com/route.php?route=wils1"
+    },
+    {
+      "range": "San Juan",
+      "peak": "Windom Peak",
+      "class": 2,
+      "distance": 6,
+      "elevation_gain": 3000,
+      "road": 0,
+      "link": "https://www.14ers.com/route.php?route=wind1"
+    }
+  ]
+}

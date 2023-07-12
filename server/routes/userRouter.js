@@ -1,18 +1,21 @@
 const express = require('express');
 
 //add in any controllers
-const mountainControllers = require('../controllers/mountainControllers');
+const userController = require('../controllers/userController');
 
 const router = express.Router();
 
 //add routers as needed
-router.get('/:name', mountainControllers.exampleMiddleware, (req, res) => {
-  return (
-    res
-      .status(200)
-      //TODO: add middleware res.locals
-      .json(res.locals.userData)
-  );
+router.get('/', userController.getUserInfo, (req, res) => {
+  return res.status(200).json(res.locals.userInfo);
+});
+
+router.post('/', userController.postUserInfo, (req, res) => {
+  return res.status(200).json(res.locals.userInfo);
+});
+
+router.patch('/notes', userController.patchUserNotes, (req, res) => {
+  return res.status(200).json(res.locals.userNotes);
 });
 
 module.exports = router;
