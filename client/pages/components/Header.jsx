@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div id="HeaderContainer">
+    <div id="headerContainer">
       <div id="leftHeader">
         <p>Total Miles Hiked:</p>
         <p>Total Elevation Gained:</p>
