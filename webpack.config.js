@@ -37,13 +37,16 @@ module.exports = {
     host: 'localhost',
     port: 8080,
     hot: true,
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, './build'),
     },
     proxy: {
       //TODO: change to route that you need
-      '/mountain': 'http://localhost:3000',
-      '/user': 'http://localhost:3000',
+      '/api': {
+        target: 'http://localhost:3000',
+        secure: false,
+      },
     },
   },
 };

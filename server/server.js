@@ -24,8 +24,8 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 
 //request from front info after page is loaded
 //sends back basic mountain info for individual cards as object
-app.use('/mountain', mountainRouter);
-app.use('/user', userRouter);
+app.use('/api/mountain', mountainRouter);
+app.use('/api/user', userRouter);
 
 // app.use('/:name', mountainRouter);
 
