@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ userInfo, milesHiked, elevation }) => {
   return (
     <div id="headerContainer">
       <div id="leftHeader">
-        <p>Total Miles Hiked:</p>
-        <p>Total Elevation Gained:</p>
+        <p>Total Miles Hiked: {milesHiked} mi.</p>
+        <p>Total Elevation Gained: {elevation}'</p>
       </div>
       <div id="rightHeader">
-        <p>Completed:</p>
-        <p>Incomplete:</p>
+        <p>Completed: {userInfo.length}</p>
+        <p>Incomplete:{58 - userInfo.length}</p>
       </div>
     </div>
   );

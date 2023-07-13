@@ -6,6 +6,9 @@ import MainContainer from './components/MainContainer.jsx';
 const HomePage = () => {
   const [mountainInfo, setMountainInfo] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
+  const [milesHiked, setMilesHiked] = useState(0);
+  const [elevation, setElevation] = useState(0);
+
   useEffect(() => {
     const getInfo = async () => {
       try {
@@ -15,6 +18,16 @@ const HomePage = () => {
         const userResponse = await fetch('/api/user');
         const newUserInfo = await userResponse.json();
         setUserInfo(newUserInfo);
+        setMilesHiked(0);
+        setElevation(0);
+        mountainInfo.forEach((mount) => {
+          userInfo.forEach((climb) => {
+            if (mount.peak === climb.peak) {
+              setMilesHiked(milesHiked + mount.distance);
+              setElevation(elevation + mount.elevation_gain);
+            }
+          });
+        });
       } catch (error) {
         console.log(error);
       }
@@ -27,7 +40,11 @@ const HomePage = () => {
       <header id="title">
         <h1>Fourteeners Checklist</h1>
       </header>
-      <Header />
+      <Header
+        userInfo={userInfo}
+        milesHiked={milesHiked}
+        elevation={elevation}
+      />
       <MainContainer mountainInfo={mountainInfo} userInfo={userInfo} />
     </div>
   );

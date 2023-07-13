@@ -4,8 +4,6 @@ import CompletedCard from './CompletedCard.jsx';
 
 const CardContainer = ({ mountainInfo, userInfo }) => {
   const cards = [];
-  console.log('mountain', mountainInfo);
-  console.log('user', userInfo);
 
   mountainInfo.forEach((el, i) => {
     let completed = false;

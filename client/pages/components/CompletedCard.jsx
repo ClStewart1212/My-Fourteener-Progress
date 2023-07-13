@@ -30,14 +30,14 @@ const CompletedCard = ({ mountainInfo, userInfo }) => {
         <li className="elevation">
           Elevation Gain: {mountainInfo.elevation_gain}'
         </li>
-        <li className="link">
-          <a href={mountainInfo.link}>Click for 14ers.com page</a>
-        </li>
         <li className="completionDate">
           Completed on: {userInfo.completionDate}
         </li>
         <li className="completionDate">
           Completion Time: {userInfo.completionTime}
+        </li>
+        <li className="link">
+          <a href={mountainInfo.link}>Click for 14ers.com page</a>
         </li>
       </ul>
       <button className="moreInfo">See More Info</button>

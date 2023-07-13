@@ -35,7 +35,7 @@ const userSchema = new Schema({
   //store images as url string pointing to assets in local drive
   completionTime: String,
   //store completion time as string '00:00:00'
-  completionDate: Date,
+  completionDate: String,
 });
 
 const Users = mongoose.model('users', userSchema);
