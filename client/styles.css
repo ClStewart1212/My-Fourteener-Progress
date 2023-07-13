@@ -6,6 +6,11 @@ ul {
   list-style-type: none;
 }
 
+h3,
+h4 {
+  background-color: wheat;
+}
+
 #home {
   display: flex;
   flex-direction: column;
@@ -52,6 +57,8 @@ ul {
 .cardHead {
   display: flex;
   justify-content: space-between;
+  background-size: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .cardHeadLeft,
@@ -59,9 +66,16 @@ ul {
   width: 75px;
 }
 
+.cardHeadRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
 .fourWheelDrive,
 .favorite {
   width: 50px;
+  border-radius: 10px;
 }
 
 .mountainImg {

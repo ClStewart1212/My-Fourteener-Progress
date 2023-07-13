@@ -1,13 +1,21 @@
 import React from 'react';
 import jeep from '../../assets/fourWheelDrive.png';
 import star from '../../assets/star.png';
+import FourWheelDrive from './FourWheelDrive.jsx';
 
 const Card = ({ info }) => {
   return (
     <div className="card">
-      <div className="cardHead">
+      <div
+        className="cardHead"
+        style={{
+          backgroundImage: `url(
+            'https://www.14ers.com/routes/blan1/rt_blan1.jpg?lastupd=202210220600'
+          )`,
+        }}
+      >
         <div className="cardHeadLeft">
-          <img className="fourWheelDrive" src={jeep} />
+          <FourWheelDrive road={info.road} />
         </div>
         <div className="cardHeadCenter">
           <h3 className="peak">{info.peak}</h3>
@@ -17,21 +25,15 @@ const Card = ({ info }) => {
           <img className="favorite" src={star} />
         </div>
       </div>
-      <div
-        className="mountainImg"
-        style={{
-          backgroundImage: `url(
-            'https://www.14ers.com/routes/blan1/rt_blan1.jpg?lastupd=202210220600'
-          )`,
-        }}
-      ></div>
       <ul className="details">
         <li className="class">Class: {info.class}</li>
         <li className="distance">Distance: {info.distance} mi.</li>
         <li className="elevation">Elevation Gain: {info.elevation_gain}'</li>
-        <li className="link">{info.link}</li>
+        <li className="link">
+          <a href={info.link}>Click for 14ers.com page</a>
+        </li>
       </ul>
-      <button className="moreInfo">Get More Info</button>
+      <button className="moreInfo">Complete me!</button>
     </div>
   );
 };

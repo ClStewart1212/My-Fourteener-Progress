@@ -5,25 +5,30 @@ import MainContainer from './components/MainContainer.jsx';
 
 const HomePage = () => {
   const [mountainInfo, setMountainInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
   useEffect(() => {
-    const getMountainInfo = async () => {
+    const getInfo = async () => {
       try {
-        const response = await fetch('/api/mountain');
-        const info = await response.json();
-        setMountainInfo(info);
+        const mountainResponse = await fetch('/api/mountain');
+        const newMountainInfo = await mountainResponse.json();
+        setMountainInfo(newMountainInfo);
+        const userResponse = await fetch('/api/user');
+        const newUserInfo = await userResponse.json();
+        setUserInfo(newUserInfo);
       } catch (error) {
         console.log(error);
       }
     };
-    getMountainInfo();
+    getInfo();
   }, []);
+
   return (
     <div id="home">
       <header id="title">
-        <h1>Solo Project</h1>
+        <h1>Fourteeners Checklist</h1>
       </header>
       <Header />
-      <MainContainer mountainInfo={mountainInfo} />
+      <MainContainer mountainInfo={mountainInfo} userInfo={userInfo} />
     </div>
   );
 };
