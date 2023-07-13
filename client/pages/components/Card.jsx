@@ -9,9 +9,7 @@ const Card = ({ info }) => {
       <div
         className="cardHead"
         style={{
-          backgroundImage: `url(
-            'https://www.14ers.com/routes/blan1/rt_blan1.jpg?lastupd=202210220600'
-          )`,
+          backgroundImage: `url(${info.url})`,
         }}
       >
         <div className="cardHeadLeft">

@@ -4,16 +4,15 @@ import CompletedCard from './CompletedCard.jsx';
 
 const CardContainer = ({ mountainInfo, userInfo }) => {
   const cards = [];
-
+console.log("userInfo", userInfo)
   mountainInfo.forEach((el, i) => {
     let completed = false;
     let user;
-    userInfo.every((element) => {
+    userInfo.forEach((element) => {
       if (element.peak == el.peak) {
         completed = true;
         user = element;
       }
-      return completed;
     });
     if (completed === true) {
       const newCard = (

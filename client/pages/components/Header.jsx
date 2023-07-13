@@ -7,6 +7,9 @@ const Header = ({ userInfo, milesHiked, elevation }) => {
         <p>Total Miles Hiked: {milesHiked} mi.</p>
         <p>Total Elevation Gained: {elevation}'</p>
       </div>
+      <div id="centerHeader">
+        <h1 id="title">Fourteeners Checklist</h1>
+      </div>
       <div id="rightHeader">
         <p>Completed: {userInfo.length}</p>
         <p>Incomplete:{58 - userInfo.length}</p>

@@ -24,6 +24,7 @@ const mountainSchema = new Schema({
   elevation_gain: Number,
   road: Number,
   link: String,
+  url: String
 });
 
 const Mountains = mongoose.model('mountains', mountainSchema);
@@ -44,9 +45,3 @@ module.exports = {
   Mountains,
   Users,
 };
-//link for possiblly importing json onto mongoDB
-
-// mongoimport --uri mongodb+srv://Clstewart1212:Hermitage7142%21@fourteeners.vcwhax4.mongodb.net/fourteeners --collection mountains --type json --file mountains.json
-
-//keep getting this error so I'm giving up for now
-// error inserting documents: Unsupported OP_QUERY command: insert. The client driver may require an upgrade. For more details see https://dochub.mongodb.org/core/legacy-opcode-removal

@@ -8,9 +8,7 @@ const CompletedCard = ({ mountainInfo, userInfo }) => {
       <div
         className="cardHead"
         style={{
-          backgroundImage: `url(
-            'https://www.14ers.com/routes/blan1/rt_blan1.jpg?lastupd=202210220600'
-          )`,
+          backgroundImage: `url(${mountainInfo.url})`,
         }}
       >
         <div className="cardHeadLeft">
@@ -33,7 +31,7 @@ const CompletedCard = ({ mountainInfo, userInfo }) => {
         <li className="completionDate">
           Completed on: {userInfo.completionDate}
         </li>
-        <li className="completionDate">
+        <li className="completionTime">
           Completion Time: {userInfo.completionTime}
         </li>
         <li className="link">
