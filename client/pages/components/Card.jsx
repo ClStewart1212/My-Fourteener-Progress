@@ -17,10 +17,10 @@ const Card = ({ info }) => {
         </div>
         <div className="cardHeadCenter">
           <h3 className="peak">{info.peak}</h3>
-          <h4 className="range">{info.range}</h4>
+          <h4 className="range">Range: {info.range}</h4>
         </div>
         <div className="cardHeadRight">
-          <img className="favorite" src={star} />
+          {/* <img className="favorite" src={star} /> */}
         </div>
       </div>
       <ul className="details">

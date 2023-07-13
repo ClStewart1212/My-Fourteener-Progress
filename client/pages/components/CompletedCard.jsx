@@ -16,7 +16,7 @@ const CompletedCard = ({ mountainInfo, userInfo }) => {
         </div>
         <div className="cardHeadCenter">
           <h3 className="peak">{mountainInfo.peak}</h3>
-          <h4 className="range">{mountainInfo.range}</h4>
+          <h4 className="range">Range: {mountainInfo.range}</h4>
         </div>
         <div className="cardHeadRight">
           <img className="favorite" src={checkmark} />

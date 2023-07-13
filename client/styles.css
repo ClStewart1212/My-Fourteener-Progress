@@ -1,22 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Covered+By+Your+Grace&family=Rock+Salt&display=swap');
 body {
   background: teal;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.2rem;
 }
 
-ul {
+ul,
+form {
   list-style-type: none;
   padding: 0;
   margin: 15px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 600;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
 h3,
 h4 {
-  background-color: wheat;
+  background-color: rgba(245, 222, 179, 0.6);
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+}
+
+h1,
+h2 {
 }
 
 #home {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  height: 100%;
 }
 
 #title {
@@ -26,10 +47,14 @@ h4 {
 #headerContainer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   background-color: wheat;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 15px;
+  margin: 5px;
+  background-size: 100%;
+  background-position: 50% 60%;
+  height: 175px;
 }
 
 #centerHeader {
@@ -45,34 +70,55 @@ h4 {
 
 #cardContainer {
   display: flex;
-  flex: 5 1 auto;
   flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 750px;
+  border-radius: 5px;
 }
 
 #filterContainer {
   background-color: wheat;
   border-radius: 15px;
   margin: 5px;
+  padding: 15px;
   display: flex;
-  width: 200px;
   flex-direction: column;
   flex: 1 1 auto;
+}
+
+#filterHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.filter {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.filterTitle {
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-align: left;
+  font-weight: bolder;
 }
 
 .card {
   background-color: wheat;
   width: 250px;
-  height: 300px;
+  height: 350px;
   margin: 5px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  /* flex: auto; */
 }
 
 .cardHead {
   height: 125px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   background-size: 100%;
@@ -88,6 +134,12 @@ h4 {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+}
+
+.cardHeadCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .fourWheelDrive,
@@ -113,6 +165,9 @@ h4 {
 }
 
 .moreInfo {
-  height: 25px;
-  width: 150px;
+  height: 35px;
+  width: 175px;
+  margin-bottom: 5px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
 }

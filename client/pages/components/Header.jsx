@@ -1,18 +1,23 @@
 import React from 'react';
+import Panoramic from '../../assets/HumboldtPANO.jpg';
 
 const Header = ({ userInfo, milesHiked, elevation }) => {
   return (
-    <div id="headerContainer">
+    <div
+      id="headerContainer"
+      style={{
+        backgroundImage: `url(${Panoramic})`,
+      }}
+    >
       <div id="leftHeader">
-        <p>Total Miles Hiked: {milesHiked.toLocaleString()} mi.</p>
-        <p>Total Elevation Gained: {elevation.toLocaleString()}'</p>
+        <h2>Total Miles Hiked: {milesHiked.toLocaleString()} mi.</h2>
+        <h2>Total Elevation Gained: {elevation.toLocaleString()}'</h2>
       </div>
       <div id="centerHeader">
         <h1 id="title">Fourteeners Checklist</h1>
       </div>
       <div id="rightHeader">
-        <p>Completed: {userInfo.length}</p>
-        <p>Incomplete:{58 - userInfo.length}</p>
+        <h2>Completed: {userInfo.length} / 58</h2>
       </div>
     </div>
   );
