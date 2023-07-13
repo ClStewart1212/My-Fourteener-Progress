@@ -1,6 +1,7 @@
 import React from 'react';
 import jeep from '../../assets/fourWheelDrive.png';
 import checkmark from '../../assets/checkmark.png';
+import { Link } from 'react-router-dom';
 
 const CompletedCard = ({ mountainInfo, userInfo }) => {
   return (
@@ -38,7 +39,11 @@ const CompletedCard = ({ mountainInfo, userInfo }) => {
           <a href={mountainInfo.link}>Click for 14ers.com page</a>
         </li>
       </ul>
-      <button className="moreInfo">See More Info</button>
+      <div className="linkInfo">
+        <Link to="/peakInfo" className="moreInfo">
+          See More Info
+        </Link>
+      </div>
     </div>
   );
 };

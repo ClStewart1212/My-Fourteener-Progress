@@ -72,8 +72,9 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
-  height: 750px;
+  height: 700px;
   border-radius: 5px;
+  position: relative;
 }
 
 #filterContainer {
@@ -164,6 +165,7 @@ h2 {
 .favorite {
   width: 50px;
   border-radius: 10px;
+  margin-left: 5px;
 }
 
 .mountainImg {
@@ -197,8 +199,9 @@ h2 {
 }
 
 .completeForm {
+  margin-left: 12px;
   height: 20px;
-  width: 100px;
+  width: 75px;
   background-color: rgb(248, 240, 225);
 }
 
@@ -212,4 +215,49 @@ h2 {
   align-self: center;
   text-align: center;
   font-size: 1.2rem;
+}
+
+.linkInfo {
+  background-color: rgb(248, 240, 225);
+  height: 30px;
+  width: 175px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreInfo {
+  text-decoration: none;
+}
+
+button,
+input {
+  background-color: rgb(248, 240, 225);
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.peakInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vw;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.truffle {
+  width: 50%;
+}
+
+#yield {
+  font-size: 5rem;
 }
