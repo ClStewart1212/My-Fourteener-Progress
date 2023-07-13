@@ -1,4 +1,5 @@
 import React from 'react';
+import jeep from '../../assets/fourWheelDrive.png';
 
 const FilterContainer = () => {
   return (
@@ -59,6 +60,10 @@ const FilterContainer = () => {
           <input type="text" name="max" placeholder="7,600"></input>
         </li>
       </ul>
+      <div className="driveLegend">
+        <img className="fourWheelDrive" src={jeep} />
+        <h4>4WD Vehicle Required</h4>
+      </div>
     </div>
   );
 };

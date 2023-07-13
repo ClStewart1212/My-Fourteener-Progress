@@ -4,7 +4,7 @@ import checkmark from '../../assets/checkmark.png';
 
 const CompletedCard = ({ mountainInfo, userInfo }) => {
   return (
-    <div className="card">
+    <div className="completedCard">
       <div
         className="cardHead"
         style={{
