@@ -4,6 +4,8 @@ body {
 
 ul {
   list-style-type: none;
+  padding: 0;
+  margin: 15px;
 }
 
 h3,
@@ -48,7 +50,12 @@ h4 {
 }
 
 #filterContainer {
+  background-color: wheat;
+  border-radius: 15px;
+  margin: 5px;
   display: flex;
+  width: 200px;
+  flex-direction: column;
   flex: 1 1 auto;
 }
 
@@ -61,9 +68,11 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
 
 .cardHead {
+  height: 125px;
   display: flex;
   justify-content: space-between;
   background-size: 100%;
@@ -96,10 +105,10 @@ h4 {
 .details {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
 }
 
-.completionDate, .completionTime {
+.completionDate,
+.completionTime {
   color: green;
 }
 

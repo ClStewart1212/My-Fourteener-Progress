@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cookieParser());
 
 //handle requests for static files
-app.use(express.static(path.resolve(__dirname, '../client/')));
+// app.use(express.static(path.resolve(__dirname, '../client/')));
 
 //handle specific route requests
 

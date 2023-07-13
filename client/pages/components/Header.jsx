@@ -4,8 +4,8 @@ const Header = ({ userInfo, milesHiked, elevation }) => {
   return (
     <div id="headerContainer">
       <div id="leftHeader">
-        <p>Total Miles Hiked: {milesHiked} mi.</p>
-        <p>Total Elevation Gained: {elevation}'</p>
+        <p>Total Miles Hiked: {milesHiked.toLocaleString()} mi.</p>
+        <p>Total Elevation Gained: {elevation.toLocaleString()}'</p>
       </div>
       <div id="centerHeader">
         <h1 id="title">Fourteeners Checklist</h1>
