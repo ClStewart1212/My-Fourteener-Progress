@@ -3,15 +3,13 @@ import Card from './Card.jsx';
 
 const CardContainer = ({ mountainInfo }) => {
   console.log('CardContainer', mountainInfo);
+  const cards = [];
   mountainInfo.forEach((el, i) => {
-    const newCard = <Card class="card" cardId={`card${i}`} info={el} />;
+    const newCard = <Card key={`card${i}`} info={el} />;
+    cards.push(newCard);
   });
 
-  return (
-    <div id="cardContainer">
-      <p>Card Container</p>
-    </div>
-  );
+  return <div id="cardContainer">{cards}</div>;
 };
 
 export default CardContainer;
