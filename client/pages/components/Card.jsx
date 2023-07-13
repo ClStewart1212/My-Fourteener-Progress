@@ -3,7 +3,30 @@ import jeep from '../../assets/fourWheelDrive.png';
 import star from '../../assets/star.png';
 import FourWheelDrive from './FourWheelDrive.jsx';
 
-const Card = ({ info }) => {
+const Card = ({ info, setUserUpdate, userUpdate }) => {
+  const postUserData = async (event) => {
+    event.preventDefault();
+    console.log(event);
+    const completionDate = event.target[0].value;
+    const completionTime = event.target[1].value;
+    console.log(
+      'name',
+      info.peak,
+      'Date',
+      completionDate,
+      'Time',
+      completionTime
+    );
+    const response = await fetch(`./api/user/?name=${info.peak}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ completionTime, completionDate }),
+    });
+    setUserUpdate(userUpdate + 1);
+  };
+
   return (
     <div className="card">
       <div
@@ -31,7 +54,29 @@ const Card = ({ info }) => {
           <a href={info.link}>Click for 14ers.com page</a>
         </li>
       </ul>
-      <button className="moreInfo">Complete me!</button>
+      <form className="completeMe" id={info.peak} onSubmit={postUserData}>
+        <div className="completed">
+          <label htmlFor="completionDate">Completed On: </label>
+          <input
+            type="text"
+            className="completeForm"
+            name="completionDate"
+            placeholder="06/06/2006"
+          ></input>
+        </div>
+        <div className="completed">
+          <label htmlFor="completionTime">Completion Time: </label>
+          <input
+            type="text"
+            className="completeForm"
+            name="completionTime"
+            placeholder="06:06:06"
+          ></input>
+        </div>
+        <button className="completeButton" type="submit">
+          Complete me!
+        </button>
+      </form>
     </div>
   );
 };

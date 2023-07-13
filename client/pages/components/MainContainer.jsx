@@ -4,11 +4,21 @@ import React from 'react';
 import CardContainer from './CardContainer.jsx';
 import FilterContainer from './FilterContainer.jsx';
 
-const MainContainer = ({ mountainInfo, userInfo }) => {
+const MainContainer = ({
+  mountainInfo,
+  userInfo,
+  setUserUpdate,
+  userUpdate,
+}) => {
   return (
     <div id="mainContainer">
       <FilterContainer />
-      <CardContainer mountainInfo={mountainInfo} userInfo={userInfo} />
+      <CardContainer
+        mountainInfo={mountainInfo}
+        userInfo={userInfo}
+        setUserUpdate={setUserUpdate}
+        userUpdate={userUpdate}
+      />
     </div>
   );
 };

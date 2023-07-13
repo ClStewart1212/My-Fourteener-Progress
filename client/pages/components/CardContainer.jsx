@@ -2,7 +2,12 @@ import React from 'react';
 import Card from './Card.jsx';
 import CompletedCard from './CompletedCard.jsx';
 
-const CardContainer = ({ mountainInfo, userInfo }) => {
+const CardContainer = ({
+  mountainInfo,
+  userInfo,
+  setUserUpdate,
+  userUpdate,
+}) => {
   const cards = [];
   mountainInfo.forEach((el, i) => {
     let completed = false;
@@ -19,7 +24,14 @@ const CardContainer = ({ mountainInfo, userInfo }) => {
       );
       cards.push(newCard);
     } else {
-      const newCard = <Card key={`card${i}`} info={el} />;
+      const newCard = (
+        <Card
+          key={`card${i}`}
+          info={el}
+          setUserUpdate={setUserUpdate}
+          userUpdate={userUpdate}
+        />
+      );
       cards.push(newCard);
     }
   });

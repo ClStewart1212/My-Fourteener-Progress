@@ -8,6 +8,7 @@ const HomePage = () => {
   const [userInfo, setUserInfo] = useState([]);
   const [milesHiked, setMilesHiked] = useState(0);
   const [elevation, setElevation] = useState(0);
+  const [userUpdate, setUserUpdate] = useState(1);
 
   useEffect(() => {
     const getInfo = async () => {
@@ -43,7 +44,7 @@ const HomePage = () => {
     //     }
     //   });
     // });
-  }, []);
+  }, [userUpdate]);
 
   useEffect(() => {
     // console.log('userInfo', userInfo, 'mountainInfo', mountainInfo);
@@ -75,7 +76,12 @@ const HomePage = () => {
         milesHiked={milesHiked}
         elevation={elevation}
       />
-      <MainContainer mountainInfo={mountainInfo} userInfo={userInfo} />
+      <MainContainer
+        mountainInfo={mountainInfo}
+        userInfo={userInfo}
+        setUserUpdate={setUserUpdate}
+        userUpdate={userUpdate}
+      />
     </div>
   );
 };
