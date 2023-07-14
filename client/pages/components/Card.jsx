@@ -49,7 +49,9 @@ const Card = ({ info, setUserUpdate, userUpdate }) => {
       <ul className="details">
         <li className="class">Class: {info.class}</li>
         <li className="distance">Distance: {info.distance} mi.</li>
-        <li className="elevation">Elevation Gain: {info.elevation_gain}'</li>
+        <li className="elevation">
+          Elevation Gain: {info.elevation_gain.toLocaleString()}'
+        </li>
         <li className="link">
           <a href={info.link}>Click for 14ers.com page</a>
         </li>

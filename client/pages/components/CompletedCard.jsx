@@ -27,7 +27,7 @@ const CompletedCard = ({ mountainInfo, userInfo }) => {
         <li className="class">Class: {mountainInfo.class}</li>
         <li className="distance">Distance: {mountainInfo.distance} mi.</li>
         <li className="elevation">
-          Elevation Gain: {mountainInfo.elevation_gain}'
+          Elevation Gain: {mountainInfo.elevation_gain.toLocaleString()}'
         </li>
         <li className="completionDate">
           Completed on: {userInfo.completionDate}
