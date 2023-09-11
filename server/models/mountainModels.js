@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const MONGO_URI =
-  'mongodb+srv://Clstewart1212:Hermitage7142%21@fourteeners.vcwhax4.mongodb.net/';
+const { MONGO_URI } = process.env
 
 mongoose
   .connect(MONGO_URI, {
@@ -12,9 +11,9 @@ mongoose
     dbName: 'fourteeners',
   })
   .then(() => console.log('Connected to Mongo DB.'))
-  .catch((err) => console.log(err));
+  .catch(err => console.log(err))
 
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const mountainSchema = new Schema({
   range: String,
@@ -24,10 +23,10 @@ const mountainSchema = new Schema({
   elevation_gain: Number,
   road: Number,
   link: String,
-  url: String
-});
+  url: String,
+})
 
-const Mountains = mongoose.model('mountains', mountainSchema);
+const Mountains = mongoose.model('mountains', mountainSchema)
 
 const userSchema = new Schema({
   peak: String,
@@ -37,11 +36,11 @@ const userSchema = new Schema({
   completionTime: String,
   //store completion time as string '00:00:00'
   completionDate: String,
-});
+})
 
-const Users = mongoose.model('users', userSchema);
+const Users = mongoose.model('users', userSchema)
 
 module.exports = {
   Mountains,
   Users,
-};
+}
