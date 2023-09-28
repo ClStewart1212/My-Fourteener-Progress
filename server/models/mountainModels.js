@@ -1,18 +1,15 @@
 const mongoose = require('mongoose')
 
-// require('dotenv').config()
+require('dotenv').config()
 
 mongoose
-  .connect(
-    'mongodb+srv://Clstewart1212:uFNOqWV7A18EdFZ1@fourteeners.vcwhax4.mongodb.net/',
-    {
-      // options for the connect method to parse the URI
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      // sets the name of the DB that our collections are part of
-      dbName: 'fourteeners',
-    },
-  )
+  .connect(process.env.MONGO_URI, {
+    // options for the connect method to parse the URI
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // sets the name of the DB that our collections are part of
+    dbName: 'fourteeners',
+  })
   .then(() => console.log('Connected to Mongo DB.'))
   .catch(err => console.log(err))
 
