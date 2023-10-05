@@ -23,7 +23,7 @@ userController.getUserInfov2 = async (req, res, next) => {
   //getting all basic user info for each mountain
   try {
     const username = req.params.username
-    const userInfo = await Users.find({ username })
+    const userInfo = await Users.findOne({ username })
     res.locals.userInfo = userInfo
     return next()
   } catch {

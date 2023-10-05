@@ -1,99 +1,74 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Header from './components/Header.jsx';
-import MainContainer from './components/MainContainer.jsx';
+import React, { useState, useEffect } from 'react'
+import Header from './components/Header.jsx'
+import MainContainer from './components/MainContainer.jsx'
+import { useQuery } from 'react-query'
 
 const HomePage = () => {
-  const [mountainInfo, setMountainInfo] = useState([]);
-  const [userInfo, setUserInfo] = useState([]);
-  const [milesHiked, setMilesHiked] = useState(0);
-  const [elevation, setElevation] = useState(0);
-  const [userUpdate, setUserUpdate] = useState(1);
+  // const [mountainInfo, setMountainInfo] = useState([])
+  // const [userInfo, setUserInfo] = useState([])
+  const [milesHiked, setMilesHiked] = useState(0)
+  const [elevation, setElevation] = useState(0)
 
+  const mountainsQuery = useQuery({
+    queryKey: ['mountains'],
+    queryFn: () => fetch('/api/mountain').then(res => res.json()),
+  })
+  if (mountainsQuery.isSuccess)
+    console.log('mountainsQuery: ', mountainsQuery.data)
+
+  const userQuery = useQuery({
+    queryKey: ['user'],
+    // TODO: Change hardcoded user
+    queryFn: () => fetch('/api/user').then(res => res.json()),
+  })
+  if (userQuery.isSuccess) console.log('userQuery: ', userQuery.data)
+
+  /*
+  !old async queries without react-query
   useEffect(() => {
     const getInfo = async () => {
       try {
-        const mountainResponse = await fetch('/api/mountain');
-        const newMountainInfo = await mountainResponse.json();
-        setMountainInfo(newMountainInfo);
-        // const userResponse = await fetch('/api/user');
-        // const newUserInfo = await userResponse.json();
-        // setUserInfo(newUserInfo);
-
+        const mountainResponse = await fetch('/api/mountain')
+        const newMountainInfo = await mountainResponse.json()
+        setMountainInfo(newMountainInfo)
         fetch('/api/user')
-          .then((response) => response.json())
-          .then((data) => setUserInfo(data));
-
-        // console.log('userInfo', userInfo, 'mountainInfo', mountainInfo);
+          .then(response => response.json())
+          .then(data => setUserInfo(data))
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
-    };
-    getInfo();
-    // console.log('useEffect userInfo', userInfo);
-    // console.log('useEffect mountainInfo', mountainInfo);
-    // setMilesHiked(0);
-    // setElevation(0);
-    // mountainInfo.forEach((mount) => {
-    //   userInfo.forEach((climb) => {
-    //     console.log('mount', mount);
-    //     console.log('climb', climb);
-    //     if (mount.peak === climb.peak) {
-    //       setMilesHiked(milesHiked + mount.distance);
-    //       setElevation(elevation + mount.elevation_gain);
-    //     }
-    //   });
-    // });
-  }, [userUpdate]);
+    }
+    getInfo()
+  }, [userUpdate])
 
   useEffect(() => {
-    // console.log('userInfo', userInfo, 'mountainInfo', mountainInfo);
     if (userInfo.length > 0 && mountainInfo.length > 0) {
-      let newMiles = 0;
-      let newElevation = 0;
-      mountainInfo.forEach((mount) => {
-        let completed = false;
-        userInfo.forEach((climb) => {
-          // console.log('mount', mount);
-          // console.log('climb', climb);
+      let newMiles = 0
+      let newElevation = 0
+      mountainInfo.forEach(mount => {
+        userInfo.forEach(climb => {
           if (mount.peak === climb.peak) {
-            newMiles += mount.distance;
-            newElevation += mount.elevation_gain;
+            newMiles += mount.distance
+            newElevation += mount.elevation_gain
           }
-        });
-      });
-      setMilesHiked(newMiles);
-      setElevation(newElevation);
+        })
+      })
+      setMilesHiked(newMiles)
+      setElevation(newElevation)
     }
-  }, [userInfo, mountainInfo]);
-
-  // console.log('userInfo', userInfo, 'mountainInfo', mountainInfo);
+  }, [userInfo, mountainInfo])
+  */
 
   return (
     <div id="home">
       <Header
-        userInfo={userInfo}
+        userInfo={userQuery}
         milesHiked={milesHiked}
         elevation={elevation}
       />
-      <MainContainer
-        mountainInfo={mountainInfo}
-        userInfo={userInfo}
-        setUserUpdate={setUserUpdate}
-        userUpdate={userUpdate}
-      />
+      <MainContainer />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
-
-const getMountainInfo = async () => {
-  try {
-    const response = await fetch('/api/mountain');
-    const info = await response.json();
-    setMountainInfo(info);
-  } catch (error) {
-    console.log(error);
-  }
-};
+export default HomePage

@@ -6,6 +6,10 @@ const userController = require('../controllers/userController')
 const router = express.Router()
 
 //add routers as needed
+router.get('/', userController.getUserInfo, (req, res) => {
+  return res.status(200).json(res.locals.userInfo)
+})
+
 router.get('/:username', userController.getUserInfov2, (req, res) => {
   return res.status(200).json(res.locals.userInfo)
 })
