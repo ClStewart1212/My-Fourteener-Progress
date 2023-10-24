@@ -1,38 +1,49 @@
 import React from 'react'
 import Card from './Card.jsx'
 import CompletedCard from './CompletedCard.jsx'
-import { useQueryClient } from 'react-query'
+import { useQuery } from 'react-query'
 
 const CardContainer = () => {
-  const queryClient = useQueryClient()
   const cards = []
 
-  const mountainsQuery = queryClient.getQueryData(['mountains'])
-  const userQuery = queryClient.getQueryData(['user'])
+  const mountainsQuery = useQuery({
+    queryKey: ['mountains'],
+    queryFn: () => fetch('/api/mountain').then(res => res.json()),
+  })
+
+  const userQuery = useQuery({
+    queryKey: ['user'],
+    // TODO: Change hardcoded user
+    queryFn: () => fetch('/api/user').then(res => res.json()),
+  })
 
   console.log('mountainsQuery from CardContainer: ', mountainsQuery)
-  if (mountainsQuery) {
-    mountainsQuery.forEach((el, i) => {
-      let completed = false
-      let user
-      userQuery.forEach(element => {
-        if (element.peak == el.peak) {
-          completed = true
-          user = element
-        }
-      })
-      if (completed === true) {
-        const newCard = (
-          <CompletedCard key={`card${i}`} mountainInfo={el} userInfo={user} />
-        )
-        cards.push(newCard)
-      } else {
-        const newCard = <Card key={`card${i}`} info={el} />
-        cards.push(newCard)
+  console.log('userQuery from CardContainer: ', userQuery)
+
+  mountainsQuery.data?.forEach((el, i) => {
+    let completed = false
+    let user
+    userQuery.data?.forEach(element => {
+      if (element.peak == el.peak) {
+        completed = true
+        user = element
       }
     })
-  }
-  return <div id="cardContainer">{cards}</div>
+    if (completed === true) {
+      const newCard = (
+        <CompletedCard key={`card${i}`} mountainInfo={el} userInfo={user} />
+      )
+      cards.push(newCard)
+    } else {
+      const newCard = <Card key={`card${i}`} info={el} />
+      cards.push(newCard)
+    }
+  })
+  return mountainsQuery.isLoading ? (
+    <div id="cardContainer">Is loading....</div>
+  ) : (
+    <div id="cardContainer">{cards}</div>
+  )
 }
 
 export default CardContainer

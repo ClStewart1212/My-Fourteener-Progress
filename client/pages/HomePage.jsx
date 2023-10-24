@@ -1,27 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/Header.jsx'
 import MainContainer from './components/MainContainer.jsx'
-import { useQuery } from 'react-query'
 
 const HomePage = () => {
   // const [mountainInfo, setMountainInfo] = useState([])
   // const [userInfo, setUserInfo] = useState([])
   const [milesHiked, setMilesHiked] = useState(0)
   const [elevation, setElevation] = useState(0)
-
-  const mountainsQuery = useQuery({
-    queryKey: ['mountains'],
-    queryFn: () => fetch('/api/mountain').then(res => res.json()),
-  })
-  if (mountainsQuery.isSuccess)
-    console.log('mountainsQuery: ', mountainsQuery.data)
-
-  const userQuery = useQuery({
-    queryKey: ['user'],
-    // TODO: Change hardcoded user
-    queryFn: () => fetch('/api/user').then(res => res.json()),
-  })
-  if (userQuery.isSuccess) console.log('userQuery: ', userQuery.data)
 
   /*
   !old async queries without react-query
@@ -61,11 +46,7 @@ const HomePage = () => {
 
   return (
     <div id="home">
-      <Header
-        userInfo={userQuery}
-        milesHiked={milesHiked}
-        elevation={elevation}
-      />
+      <Header milesHiked={milesHiked} elevation={elevation} />
       <MainContainer />
     </div>
   )
