@@ -1,5 +1,5 @@
-import Card from './Card.jsx'
-import { cardInfo } from '../../hooks/hooks.js'
+import Card from './Card'
+import { cardInfo } from '../../hooks/hooks'
 
 type CardContainerProps = {
   cardInfo: cardInfo[]

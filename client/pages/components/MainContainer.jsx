@@ -1,26 +1,20 @@
-import React from 'react';
+import React from 'react'
 
 //TODO: import child components
-import CardContainer from './CardContainer.jsx';
-import FilterContainer from './FilterContainer.jsx';
+import CardContainer from './CardContainer'
+import FilterContainer from './FilterContainer.jsx'
 
-const MainContainer = ({
-  mountainInfo,
-  userInfo,
-  setUserUpdate,
-  userUpdate,
-}) => {
+const MainContainer = ({ cardInfo, setUserUpdate, userUpdate }) => {
   return (
     <div id="mainContainer">
       <FilterContainer />
       <CardContainer
-        mountainInfo={mountainInfo}
-        userInfo={userInfo}
+        cardInfo={cardInfo}
         setUserUpdate={setUserUpdate}
         userUpdate={userUpdate}
       />
     </div>
-  );
-};
+  )
+}
 
-export default MainContainer;
+export default MainContainer

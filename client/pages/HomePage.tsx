@@ -42,8 +42,7 @@ const HomePage = () => {
     <div id="home">
       <Header mountainInfo={mountainInfo} userInfo={userInfo} />
       <MainContainer
-        mountainInfo={mountainInfo}
-        userInfo={userInfo}
+        cardInfo={cardInfo}
         setUserUpdate={setUserUpdate}
         userUpdate={userUpdate}
       />
