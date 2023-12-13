@@ -41,7 +41,7 @@ export const getAllUserData = async (): Promise<userData[]> => {
   }
 }
 
-type cardInfo = {
+export type cardInfo = {
   peak: string
   range: string
   imgUrl: string
@@ -74,7 +74,7 @@ export const createCardInfo = (
     }
     return card
   })
-
+  console.log('cardInfo: ', cardInfo)
   cardInfo.forEach(card => {
     userInfo.forEach(peak => {
       if (peak.peak == card.peak) {

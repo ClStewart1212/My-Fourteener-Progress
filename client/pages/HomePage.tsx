@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import MainContainer from './components/MainContainer.jsx'
 import {
+  cardInfo,
+  createCardInfo,
   getAllMountainData,
   getAllUserData,
   mountainData,
@@ -11,6 +13,7 @@ import {
 const HomePage = () => {
   const [mountainInfo, setMountainInfo] = useState<mountainData[]>([])
   const [userInfo, setUserInfo] = useState<userData[]>([])
+  const [cardInfo, setCardInfo] = useState<cardInfo[]>([])
   const [userUpdate, setUserUpdate] = useState(1)
 
   useEffect(() => {
@@ -30,6 +33,10 @@ const HomePage = () => {
     }
     fetchUserData()
   }, [userUpdate])
+
+  useEffect(() => {
+    setCardInfo(createCardInfo(userInfo, mountainInfo))
+  }, [userInfo])
 
   return (
     <div id="home">
