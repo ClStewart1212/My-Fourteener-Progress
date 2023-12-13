@@ -1,11 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './client/index.js',
   mode: process.env.NODE_ENV,
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -23,6 +23,11 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: [/node_modules/],
+        use: ['ts-loader'],
       },
       {
         test: /.(css|scss)$/,
@@ -60,4 +65,4 @@ module.exports = {
       },
     },
   },
-};
+}

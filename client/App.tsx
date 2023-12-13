@@ -1,11 +1,10 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 // import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import HomePage from './pages/HomePage.jsx'
+import HomePage from './pages/HomePage'
 import PeakInfo from './pages/peakInfo.jsx'
 
-import styles from './styles.css'
+// import styles from './styles.css'
 
 //create app HTML structure
 const App = () => {
