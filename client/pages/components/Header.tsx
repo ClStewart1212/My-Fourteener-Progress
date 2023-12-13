@@ -1,33 +1,31 @@
 import { useEffect, useState } from 'react'
 import Panoramic from '../../assets/HumboldtPANO.jpg'
 
-import { mountainData, userData } from '../../hooks/hooks'
+import { cardInfo } from '../../hooks/hooks'
 
 type headerProps = {
-  mountainInfo: mountainData[]
-  userInfo: userData[]
+  cardInfo: cardInfo[]
 }
 
-const Header = ({ mountainInfo, userInfo }: headerProps) => {
+const Header = ({ cardInfo }: headerProps) => {
   const [milesHiked, setMilesHiked] = useState(0)
   const [elevation, setElevation] = useState(0)
+  const [completedTotal, setCompletedTotal] = useState(0)
 
   useEffect(() => {
-    if (userInfo.length > 0 && mountainInfo.length > 0) {
+    if (cardInfo.length > 0) {
       let newMiles = 0
       let newElevation = 0
-      mountainInfo.forEach(mount => {
-        userInfo.forEach(climb => {
-          if (mount.peak === climb.peak) {
-            newMiles += mount.distance
-            newElevation += mount.elevation_gain
-          }
-        })
+      const completedCardInfo = cardInfo.filter(info => info.completed)
+      setCompletedTotal(completedCardInfo.length)
+      completedCardInfo.forEach(info => {
+        newMiles += info.distance
+        newElevation += info.elevationGain
       })
       setMilesHiked(newMiles)
       setElevation(newElevation)
     }
-  }, [userInfo, mountainInfo])
+  }, [cardInfo])
 
   return (
     <div
@@ -43,7 +41,7 @@ const Header = ({ mountainInfo, userInfo }: headerProps) => {
         <h1 id="title">The Fourteeners of Colorado</h1>
       </div>
       <div id="rightHeader">
-        <h2>Completed: {userInfo.length} / 58</h2>
+        <h2>Completed: {completedTotal} / 58</h2>
       </div>
     </div>
   )
