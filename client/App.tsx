@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import PeakInfo from './pages/peakInfo.jsx'
 
-// import styles from './styles.css'
+import './styles.css'
 
 //create app HTML structure
 const App = () => {
