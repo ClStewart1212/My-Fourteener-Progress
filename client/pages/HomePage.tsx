@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
-import MainContainer from './components/MainContainer.jsx'
+import MainContainer from './components/MainContainer'
+
 import {
   cardInfo,
   createCardInfo,
@@ -15,6 +16,7 @@ const HomePage = () => {
   const [userInfo, setUserInfo] = useState<userData[]>([])
   const [cardInfo, setCardInfo] = useState<cardInfo[]>([])
   const [userUpdate, setUserUpdate] = useState(1)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchMountainData = async () => {
@@ -36,6 +38,7 @@ const HomePage = () => {
 
   useEffect(() => {
     setCardInfo(createCardInfo(userInfo, mountainInfo))
+    setIsLoading(false)
   }, [userInfo])
 
   return (
@@ -45,6 +48,7 @@ const HomePage = () => {
         cardInfo={cardInfo}
         setUserUpdate={setUserUpdate}
         userUpdate={userUpdate}
+        isLoading={isLoading}
       />
     </div>
   )
