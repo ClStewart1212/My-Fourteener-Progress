@@ -16,6 +16,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchMountainData = async () => {
       const newMountainData = await getAllMountainData()
+      console.log('mountainData retrieved', newMountainData)
       setMountainInfo(newMountainData)
     }
     fetchMountainData()
@@ -24,6 +25,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       const newUserData = await getAllUserData()
+      console.log('userData retrieved', newUserData)
       setUserInfo(newUserData)
     }
     fetchUserData()
