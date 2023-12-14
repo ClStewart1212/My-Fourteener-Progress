@@ -10,6 +10,10 @@ router.get('/:username', userController.getUserInfov2, (req, res) => {
   return res.status(200).json(res.locals.userInfo)
 })
 
+router.get('/', userController.getUserInfo, (req, res) => {
+  return res.status(200).json(res.locals.userInfo)
+})
+
 router.post('/', userController.createUser, (req, res) => {
   return res.status(200).json(res.locals.userInfo)
 })

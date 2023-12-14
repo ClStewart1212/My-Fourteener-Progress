@@ -1,5 +1,5 @@
-import React from 'react';
-import jeep from '../../assets/fourWheelDrive.png';
+import React from 'react'
+import jeep from '../../assets/fourWheelDrive.png'
 
 const FilterContainer = () => {
   return (
@@ -15,8 +15,7 @@ const FilterContainer = () => {
             type="radio"
             name="completion"
             id="complete"
-            value="Complete"
-          ></input>
+            value="Complete"></input>
           <label htmlFor="complete">Completed</label>
         </div>
         <div>
@@ -24,8 +23,7 @@ const FilterContainer = () => {
             type="radio"
             name="completion"
             id="incomplete"
-            value="Incomplete"
-          ></input>
+            value="Incomplete"></input>
           <label htmlFor="incomplete">Incomplete</label>
         </div>
         {/* <li>
@@ -65,7 +63,7 @@ const FilterContainer = () => {
         <h4>4WD Vehicle Required</h4>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FilterContainer;
+export default FilterContainer
