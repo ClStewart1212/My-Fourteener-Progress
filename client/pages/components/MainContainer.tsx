@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 
 //TODO: import child components
 import CardContainer from './CardContainer'
-import FilterContainer from './FilterContainer.jsx'
+import FilterContainer from './FilterContainer'
 import { cardInfo } from '../../hooks/hooks'
 
 type MainContainerProps = {

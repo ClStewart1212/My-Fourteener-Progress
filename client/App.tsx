@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import HomePage from './pages/HomePage'
-import PeakInfo from './pages/peakInfo.jsx'
+import PeakInfo from './pages/peakInfo'
 
 import './styles.css'
 
