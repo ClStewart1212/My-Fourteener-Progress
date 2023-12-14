@@ -14,13 +14,18 @@ router.get('/', userController.getUserInfo, (req, res) => {
   return res.status(200).json(res.locals.userInfo)
 })
 
-router.post('/', userController.createUser, (req, res) => {
+router.post('/', userController.postUserInfo, (req, res) => {
   return res.status(200).json(res.locals.userInfo)
 })
 
-router.patch('/:username/complete', userController.addPeak, (req, res) => {
-  return res.status(200).json(res.locals.userInfo)
-})
+//! for when there are actually different users
+// router.post('/', userController.createUser, (req, res) => {
+//   return res.status(200).json(res.locals.userInfo)
+// })
+
+// router.patch('/:username/complete', userController.addPeakv2, (req, res) => {
+//   return res.status(200).json(res.locals.userInfo)
+// })
 
 router.patch('/notes', userController.patchUserNotes, (req, res) => {
   return res.status(200).json(res.locals.userNotes)

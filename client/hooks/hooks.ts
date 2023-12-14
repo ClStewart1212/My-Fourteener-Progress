@@ -86,3 +86,17 @@ export const createCardInfo = (
   })
   return cardInfo
 }
+
+export const postUserData = async (
+  peakName: string,
+  completionTime: string,
+  completionDate: string,
+) => {
+  await fetch(`/api/user/?name=${peakName}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ completionTime, completionDate }),
+  })
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { cardInfo } from '../../hooks/hooks'
+import { cardInfo, postUserData } from '../../hooks/hooks'
 
 type CardCompletionProps = {
   info: cardInfo
@@ -15,16 +15,6 @@ const CardCompletion = ({
 }: CardCompletionProps) => {
   const [completionDate, setCompletionDate] = useState('')
   const [completionTime, setCompletionTime] = useState('')
-  const postUserData = async () => {
-    await fetch(`./api/user/?name=${info.peak}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ completionTime, completionDate }),
-    })
-    setUserUpdate(userUpdate + 1)
-  }
 
   return info.completed ? (
     <div>
@@ -41,13 +31,7 @@ const CardCompletion = ({
       </div>
     </div>
   ) : (
-    <form
-      className="completeMe"
-      id={info.peak}
-      onSubmit={e => {
-        e.preventDefault
-        postUserData()
-      }}>
+    <div className="completeMe" id={info.peak}>
       <div className="completed">
         <label htmlFor="completionDate">Completed On: </label>
         <input
@@ -66,10 +50,17 @@ const CardCompletion = ({
           placeholder="06:06:06"
           onChange={e => setCompletionTime(e.target.value)}></input>
       </div>
-      <button className="completeButton" type="submit">
+      <button
+        className="completeButton"
+        type="submit"
+        onClick={e => {
+          e.preventDefault
+          postUserData(info.peak, completionTime, completionDate)
+          setUserUpdate(userUpdate => userUpdate + 1)
+        }}>
         Complete me!
       </button>
-    </form>
+    </div>
   )
 }
 

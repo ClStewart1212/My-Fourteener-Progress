@@ -57,7 +57,7 @@ const userSchemaV2 = new Schema({
   ],
 })
 
-const Users = mongoose.model('users', userSchemaV2)
+const Users = mongoose.model('users', userSchema)
 
 module.exports = {
   Mountains,

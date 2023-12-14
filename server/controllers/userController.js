@@ -39,7 +39,13 @@ userController.getUserInfov2 = async (req, res, next) => {
 userController.postUserInfo = async (req, res, next) => {
   //getting all basic user info
   const peak = req.query.name
+  console.log('peak: ', peak)
   const { completionDate, completionTime } = req.body
+  console.log(
+    'completionDate, completionTime: ',
+    completionDate,
+    completionTime,
+  )
   if (!peak)
     return next({
       log: `userController.postUserInfo ERROR: fourteener peak name missing`,

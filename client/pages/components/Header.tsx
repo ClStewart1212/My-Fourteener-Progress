@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import Panoramic from '../../assets/HumboldtPANO.jpg'
-
 import { cardInfo } from '../../hooks/hooks'
 
 type headerProps = {
