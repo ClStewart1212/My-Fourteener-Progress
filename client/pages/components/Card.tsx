@@ -6,20 +6,15 @@ import CardCompletion from './CardCompletion'
 
 type CardProps = {
   info: cardInfo
-  userUpdate: number
   setUserUpdate: React.Dispatch<React.SetStateAction<number>>
 }
 
-const Card = ({ info, setUserUpdate, userUpdate }: CardProps) => {
+const Card = ({ info, setUserUpdate }: CardProps) => {
   return (
     <div className={info.completed ? 'completedCard' : 'card'}>
       <CardHeader info={info} />
       <CardDetails info={info} />
-      <CardCompletion
-        info={info}
-        userUpdate={userUpdate}
-        setUserUpdate={setUserUpdate}
-      />
+      <CardCompletion info={info} setUserUpdate={setUserUpdate} />
     </div>
   )
 }

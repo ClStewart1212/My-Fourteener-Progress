@@ -4,17 +4,18 @@ import { cardInfo, postUserData } from '../../hooks/hooks'
 
 type CardCompletionProps = {
   info: cardInfo
-  userUpdate: number
   setUserUpdate: React.Dispatch<React.SetStateAction<number>>
 }
 
-const CardCompletion = ({
-  info,
-  userUpdate,
-  setUserUpdate,
-}: CardCompletionProps) => {
+const CardCompletion = ({ info, setUserUpdate }: CardCompletionProps) => {
   const [completionDate, setCompletionDate] = useState('')
   const [completionTime, setCompletionTime] = useState('')
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault
+    postUserData(info.peak, completionTime, completionDate)
+    setUserUpdate(userUpdate => userUpdate + 1)
+  }
 
   return info.completed ? (
     <div>
@@ -53,11 +54,7 @@ const CardCompletion = ({
       <button
         className="completeButton"
         type="submit"
-        onClick={e => {
-          e.preventDefault
-          postUserData(info.peak, completionTime, completionDate)
-          setUserUpdate(userUpdate => userUpdate + 1)
-        }}>
+        onClick={e => handleClick(e)}>
         Complete me!
       </button>
     </div>

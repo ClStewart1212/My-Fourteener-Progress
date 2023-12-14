@@ -8,7 +8,6 @@ import { cardInfo } from '../../hooks/hooks'
 
 type MainContainerProps = {
   cardInfo: cardInfo[]
-  userUpdate: number
   setUserUpdate: React.Dispatch<React.SetStateAction<number>>
   isLoading: boolean
 }
@@ -16,7 +15,6 @@ type MainContainerProps = {
 const MainContainer = ({
   cardInfo,
   setUserUpdate,
-  userUpdate,
   isLoading,
 }: MainContainerProps) => {
   return (
@@ -27,11 +25,7 @@ const MainContainer = ({
           <CircularProgress />
         </Box>
       ) : (
-        <CardContainer
-          cardInfo={cardInfo}
-          setUserUpdate={setUserUpdate}
-          userUpdate={userUpdate}
-        />
+        <CardContainer cardInfo={cardInfo} setUserUpdate={setUserUpdate} />
       )}
     </div>
   )

@@ -45,7 +45,6 @@ const HomePage = () => {
       <MainContainer
         cardInfo={cardInfo}
         setUserUpdate={setUserUpdate}
-        userUpdate={userUpdate}
         isLoading={isLoading}
       />
     </div>
